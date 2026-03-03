@@ -96,8 +96,8 @@ export default function Page() {
               ))}
             </div>
             
-            {/* Row 2 - Offset */}
-            <div className="flex gap-[4vw] sm:gap-[3vw] md:gap-[2vw] w-max ml-[15vw] sm:ml-[10vw] md:ml-[8vw] lg:ml-[6vw]">
+            {/* Row 2 - Offset (Half image + half gap) */}
+            <div className="flex gap-[4vw] sm:gap-[3vw] md:gap-[2vw] w-max ml-[39.5vw] sm:ml-[24vw] md:ml-[18.5vw] lg:ml-[15vw] xl:ml-[12vw]">
               {[9, 10, 11, 12, 13, 14, 15, 16].map((i) => (
                 <div key={`r2-${i}`} className="aspect-video w-[75vw] sm:w-[45vw] md:w-[35vw] lg:w-[28vw] xl:w-[22vw] shrink-0 relative rounded-[20px] md:rounded-[28px] overflow-hidden bg-[#1a1a1c]">
                   <Image
@@ -111,8 +111,8 @@ export default function Page() {
               ))}
             </div>
 
-            {/* Row 3 - Offset */}
-            <div className="flex gap-[4vw] sm:gap-[3vw] md:gap-[2vw] w-max ml-[7.5vw] sm:ml-[5vw] md:ml-[4vw] lg:ml-[3vw]">
+            {/* Row 3 - Aligned with Row 1 for a brick pattern */}
+            <div className="flex gap-[4vw] sm:gap-[3vw] md:gap-[2vw] w-max">
               {[17, 18, 19, 20, 21, 22, 23, 24].map((i) => (
                 <div key={`r3-${i}`} className="aspect-video w-[75vw] sm:w-[45vw] md:w-[35vw] lg:w-[28vw] xl:w-[22vw] shrink-0 relative rounded-[20px] md:rounded-[28px] overflow-hidden bg-[#1a1a1c]">
                   <Image
