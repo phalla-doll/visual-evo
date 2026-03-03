@@ -74,17 +74,17 @@ export default function Page() {
         {/* Image Grid */}
         <div className="w-full relative pb-24 overflow-hidden">
           {/* Fade masks for edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-8 md:w-16 bg-gradient-to-r from-[#101010] to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-8 md:w-16 bg-gradient-to-l from-[#101010] to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute left-0 top-0 bottom-0 w-[12vw] md:w-[8vw] bg-gradient-to-r from-[#101010] to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-[12vw] md:w-[8vw] bg-gradient-to-l from-[#101010] to-transparent z-10 pointer-events-none"></div>
           
           <div 
             ref={scrollRef}
-            className="flex flex-col gap-4 md:gap-6 overflow-x-auto hide-scrollbar px-4 md:px-8"
+            className="flex flex-col gap-[4vw] sm:gap-[3vw] md:gap-[2vw] overflow-x-auto hide-scrollbar px-[4vw] md:px-[8vw]"
           >
             {/* Row 1 */}
-            <div className="flex gap-4 md:gap-6 w-max">
+            <div className="flex gap-[4vw] sm:gap-[3vw] md:gap-[2vw] w-max">
               {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-                <div key={`r1-${i}`} className="aspect-video w-[240px] sm:w-[300px] md:w-[380px] lg:w-[460px] shrink-0 relative rounded-[20px] md:rounded-[28px] overflow-hidden bg-[#1a1a1c]">
+                <div key={`r1-${i}`} className="aspect-video w-[75vw] sm:w-[45vw] md:w-[35vw] lg:w-[28vw] xl:w-[22vw] shrink-0 relative rounded-[20px] md:rounded-[28px] overflow-hidden bg-[#1a1a1c]">
                   <Image
                     src={`https://picsum.photos/seed/portrait1${i}/800/450`}
                     alt="AI generated portrait"
@@ -97,9 +97,9 @@ export default function Page() {
             </div>
             
             {/* Row 2 - Offset */}
-            <div className="flex gap-4 md:gap-6 w-max ml-12 md:ml-24">
+            <div className="flex gap-[4vw] sm:gap-[3vw] md:gap-[2vw] w-max ml-[15vw] sm:ml-[10vw] md:ml-[8vw] lg:ml-[6vw]">
               {[9, 10, 11, 12, 13, 14, 15, 16].map((i) => (
-                <div key={`r2-${i}`} className="aspect-video w-[240px] sm:w-[300px] md:w-[380px] lg:w-[460px] shrink-0 relative rounded-[20px] md:rounded-[28px] overflow-hidden bg-[#1a1a1c]">
+                <div key={`r2-${i}`} className="aspect-video w-[75vw] sm:w-[45vw] md:w-[35vw] lg:w-[28vw] xl:w-[22vw] shrink-0 relative rounded-[20px] md:rounded-[28px] overflow-hidden bg-[#1a1a1c]">
                   <Image
                     src={`https://picsum.photos/seed/portrait1${i}/800/450`}
                     alt="AI generated portrait"
@@ -112,9 +112,9 @@ export default function Page() {
             </div>
 
             {/* Row 3 - Offset */}
-            <div className="flex gap-4 md:gap-6 w-max ml-6 md:ml-12">
+            <div className="flex gap-[4vw] sm:gap-[3vw] md:gap-[2vw] w-max ml-[7.5vw] sm:ml-[5vw] md:ml-[4vw] lg:ml-[3vw]">
               {[17, 18, 19, 20, 21, 22, 23, 24].map((i) => (
-                <div key={`r3-${i}`} className="aspect-video w-[240px] sm:w-[300px] md:w-[380px] lg:w-[460px] shrink-0 relative rounded-[20px] md:rounded-[28px] overflow-hidden bg-[#1a1a1c]">
+                <div key={`r3-${i}`} className="aspect-video w-[75vw] sm:w-[45vw] md:w-[35vw] lg:w-[28vw] xl:w-[22vw] shrink-0 relative rounded-[20px] md:rounded-[28px] overflow-hidden bg-[#1a1a1c]">
                   <Image
                     src={`https://picsum.photos/seed/portrait1${i}/800/450`}
                     alt="AI generated portrait"
