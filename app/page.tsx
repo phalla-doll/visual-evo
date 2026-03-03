@@ -79,12 +79,12 @@ export default function Page() {
           
           <div 
             ref={scrollRef}
-            className="flex flex-col gap-[4vw] sm:gap-[3vw] md:gap-[2vw] overflow-x-auto hide-scrollbar px-[4vw] md:px-[8vw]"
+            className="flex flex-col gap-[3vw] sm:gap-[2vw] md:gap-[1.5vw] overflow-x-auto hide-scrollbar px-[4vw] md:px-[8vw]"
           >
             {/* Row 1 */}
-            <div className="flex gap-[4vw] sm:gap-[3vw] md:gap-[2vw] w-max">
+            <div className="flex gap-[3vw] sm:gap-[2vw] md:gap-[1.5vw] w-max">
               {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-                <div key={`r1-${i}`} className="aspect-video w-[75vw] sm:w-[45vw] md:w-[35vw] lg:w-[28vw] xl:w-[22vw] shrink-0 relative rounded-[20px] md:rounded-[28px] overflow-hidden bg-[#1a1a1c]">
+                <div key={`r1-${i}`} className="aspect-video w-[90vw] sm:w-[54vw] md:w-[42vw] lg:w-[34vw] xl:w-[26vw] shrink-0 relative rounded-[20px] md:rounded-[28px] overflow-hidden bg-[#1a1a1c]">
                   <Image
                     src={`https://picsum.photos/seed/portrait1${i}/800/450`}
                     alt="AI generated portrait"
@@ -97,9 +97,9 @@ export default function Page() {
             </div>
             
             {/* Row 2 - Offset (Half image + half gap) */}
-            <div className="flex gap-[4vw] sm:gap-[3vw] md:gap-[2vw] w-max ml-[39.5vw] sm:ml-[24vw] md:ml-[18.5vw] lg:ml-[15vw] xl:ml-[12vw]">
+            <div className="flex gap-[3vw] sm:gap-[2vw] md:gap-[1.5vw] w-max ml-[46.5vw] sm:ml-[28vw] md:ml-[21.75vw] lg:ml-[17.75vw] xl:ml-[13.75vw]">
               {[9, 10, 11, 12, 13, 14, 15, 16].map((i) => (
-                <div key={`r2-${i}`} className="aspect-video w-[75vw] sm:w-[45vw] md:w-[35vw] lg:w-[28vw] xl:w-[22vw] shrink-0 relative rounded-[20px] md:rounded-[28px] overflow-hidden bg-[#1a1a1c]">
+                <div key={`r2-${i}`} className="aspect-video w-[90vw] sm:w-[54vw] md:w-[42vw] lg:w-[34vw] xl:w-[26vw] shrink-0 relative rounded-[20px] md:rounded-[28px] overflow-hidden bg-[#1a1a1c]">
                   <Image
                     src={`https://picsum.photos/seed/portrait1${i}/800/450`}
                     alt="AI generated portrait"
@@ -112,9 +112,9 @@ export default function Page() {
             </div>
 
             {/* Row 3 - Aligned with Row 1 for a brick pattern */}
-            <div className="flex gap-[4vw] sm:gap-[3vw] md:gap-[2vw] w-max">
+            <div className="flex gap-[3vw] sm:gap-[2vw] md:gap-[1.5vw] w-max">
               {[17, 18, 19, 20, 21, 22, 23, 24].map((i) => (
-                <div key={`r3-${i}`} className="aspect-video w-[75vw] sm:w-[45vw] md:w-[35vw] lg:w-[28vw] xl:w-[22vw] shrink-0 relative rounded-[20px] md:rounded-[28px] overflow-hidden bg-[#1a1a1c]">
+                <div key={`r3-${i}`} className="aspect-video w-[90vw] sm:w-[54vw] md:w-[42vw] lg:w-[34vw] xl:w-[26vw] shrink-0 relative rounded-[20px] md:rounded-[28px] overflow-hidden bg-[#1a1a1c]">
                   <Image
                     src={`https://picsum.photos/seed/portrait1${i}/800/450`}
                     alt="AI generated portrait"
