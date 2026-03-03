@@ -1,7 +1,7 @@
 'use client';
 
 import Image from "next/image";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Star } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 export default function Page() {
@@ -157,7 +157,101 @@ export default function Page() {
             </div>
           </div>
         </div>
+
+        {/* Testimonials Section */}
+        <section className="w-full max-w-[1400px] mx-auto px-8 py-24 md:py-32 flex flex-col items-center">
+          <div className="text-center mb-16 md:mb-20">
+            <h2 className="text-4xl md:text-5xl tracking-tight text-[#f5f5f5] font-normal mb-6">
+              Trusted by <span className="text-[#a0a0a0]">visionaries</span>
+            </h2>
+            <p className="text-[17px] text-[#a0a0a0] font-light max-w-xl mx-auto leading-[1.6]">
+              Join thousands of creators who are already accelerating their workflow with our industry-leading models.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+            {/* Testimonial 1 */}
+            <div className="bg-[#151516] border border-white/5 rounded-[28px] p-8 md:p-10 flex flex-col justify-between hover:bg-[#1a1a1c] transition-colors duration-300">
+              <div>
+                <div className="flex gap-1 mb-8">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} className="w-4 h-4 fill-[#f5f5f5] text-[#f5f5f5]" />
+                  ))}
+                </div>
+                <p className="text-[16px] md:text-[17px] leading-[1.7] text-[#d0d0d0] font-light mb-10">
+                  "The quality of the portraits is simply unmatched. It has completely transformed how I generate assets for my campaigns, saving me hours every week."
+                </p>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full overflow-hidden relative bg-[#222224]">
+                  <Image src="https://picsum.photos/seed/user1/100/100" alt="Sarah Jenkins" fill className="object-cover" referrerPolicy="no-referrer" />
+                </div>
+                <div>
+                  <div className="text-[15px] text-[#f5f5f5] font-medium">Sarah Jenkins</div>
+                  <div className="text-[13px] text-[#a0a0a0] font-light mt-0.5">Art Director</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Testimonial 2 */}
+            <div className="bg-[#151516] border border-white/5 rounded-[28px] p-8 md:p-10 flex flex-col justify-between hover:bg-[#1a1a1c] transition-colors duration-300">
+              <div>
+                <div className="flex gap-1 mb-8">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} className="w-4 h-4 fill-[#f5f5f5] text-[#f5f5f5]" />
+                  ))}
+                </div>
+                <p className="text-[16px] md:text-[17px] leading-[1.7] text-[#d0d0d0] font-light mb-10">
+                  "VisualEvo's attention to detail and lighting is incredible. The 16:9 aspect ratio support makes it perfect for cinematic storyboarding."
+                </p>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full overflow-hidden relative bg-[#222224]">
+                  <Image src="https://picsum.photos/seed/user2/100/100" alt="Marcus Chen" fill className="object-cover" referrerPolicy="no-referrer" />
+                </div>
+                <div>
+                  <div className="text-[15px] text-[#f5f5f5] font-medium">Marcus Chen</div>
+                  <div className="text-[13px] text-[#a0a0a0] font-light mt-0.5">Concept Artist</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Testimonial 3 */}
+            <div className="bg-[#151516] border border-white/5 rounded-[28px] p-8 md:p-10 flex flex-col justify-between hover:bg-[#1a1a1c] transition-colors duration-300">
+              <div>
+                <div className="flex gap-1 mb-8">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} className="w-4 h-4 fill-[#f5f5f5] text-[#f5f5f5]" />
+                  ))}
+                </div>
+                <p className="text-[16px] md:text-[17px] leading-[1.7] text-[#d0d0d0] font-light mb-10">
+                  "I've tried every AI image generator out there, and nothing comes close to the photorealism and consistency I get here. Absolute game-changer."
+                </p>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full overflow-hidden relative bg-[#222224]">
+                  <Image src="https://picsum.photos/seed/user3/100/100" alt="Elena Rodriguez" fill className="object-cover" referrerPolicy="no-referrer" />
+                </div>
+                <div>
+                  <div className="text-[15px] text-[#f5f5f5] font-medium">Elena Rodriguez</div>
+                  <div className="text-[13px] text-[#a0a0a0] font-light mt-0.5">Creative Lead</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
+
+      {/* Footer */}
+      <footer className="w-full border-t border-white/5 py-8 mt-auto">
+        <div className="max-w-[1400px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[13px] text-[#808080] font-light">
+          <div>&copy; {new Date().getFullYear()} VISUALEVO. All rights reserved.</div>
+          <div className="flex gap-8">
+            <a href="#" className="hover:text-[#d0d0d0] transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-[#d0d0d0] transition-colors">Terms of Service</a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
