@@ -60,54 +60,53 @@ export default function Page() {
         {/* Image Grid */}
         <div className="w-full relative pb-24 max-w-[100vw] overflow-hidden">
           {/* Fade masks for edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-12 md:w-24 bg-gradient-to-r from-[#101010] to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-12 md:w-24 bg-gradient-to-l from-[#101010] to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute left-0 top-0 bottom-0 w-12 md:w-32 bg-gradient-to-r from-[#101010] to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-12 md:w-32 bg-gradient-to-l from-[#101010] to-transparent z-10 pointer-events-none"></div>
           
-          <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar px-12 md:px-24">
-            <div className="aspect-video w-[280px] sm:w-[360px] md:w-[480px] lg:w-[600px] shrink-0 relative rounded-[32px] overflow-hidden bg-[#1a1a1c] snap-center">
-              <Image
-                src="https://picsum.photos/seed/portrait11/800/450"
-                alt="AI generated portrait"
-                fill
-                className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
-                referrerPolicy="no-referrer"
-              />
+          <div className="flex flex-col gap-4 md:gap-6 overflow-x-auto hide-scrollbar px-12 md:px-32">
+            {/* Row 1 */}
+            <div className="flex gap-4 md:gap-6 w-max">
+              {[1, 2, 3, 4, 5, 6].map((i) => (
+                <div key={`r1-${i}`} className="aspect-video w-[240px] sm:w-[300px] md:w-[380px] lg:w-[460px] shrink-0 relative rounded-[20px] md:rounded-[28px] overflow-hidden bg-[#1a1a1c]">
+                  <Image
+                    src={`https://picsum.photos/seed/portrait1${i}/800/450`}
+                    alt="AI generated portrait"
+                    fill
+                    className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+              ))}
             </div>
-            <div className="aspect-video w-[280px] sm:w-[360px] md:w-[480px] lg:w-[600px] shrink-0 relative rounded-[32px] overflow-hidden bg-[#1a1a1c] snap-center">
-              <Image
-                src="https://picsum.photos/seed/portrait12/800/450"
-                alt="AI generated portrait"
-                fill
-                className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
-                referrerPolicy="no-referrer"
-              />
+            
+            {/* Row 2 - Offset */}
+            <div className="flex gap-4 md:gap-6 w-max ml-12 md:ml-24">
+              {[7, 8, 9, 10, 11, 12].map((i) => (
+                <div key={`r2-${i}`} className="aspect-video w-[240px] sm:w-[300px] md:w-[380px] lg:w-[460px] shrink-0 relative rounded-[20px] md:rounded-[28px] overflow-hidden bg-[#1a1a1c]">
+                  <Image
+                    src={`https://picsum.photos/seed/portrait1${i}/800/450`}
+                    alt="AI generated portrait"
+                    fill
+                    className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+              ))}
             </div>
-            <div className="aspect-video w-[280px] sm:w-[360px] md:w-[480px] lg:w-[600px] shrink-0 relative rounded-[32px] overflow-hidden bg-[#1a1a1c] snap-center">
-              <Image
-                src="https://picsum.photos/seed/portrait13/800/450"
-                alt="AI generated portrait"
-                fill
-                className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-            <div className="aspect-video w-[280px] sm:w-[360px] md:w-[480px] lg:w-[600px] shrink-0 relative rounded-[32px] overflow-hidden bg-[#1a1a1c] snap-center">
-              <Image
-                src="https://picsum.photos/seed/portrait14/800/450"
-                alt="AI generated portrait"
-                fill
-                className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-            <div className="aspect-video w-[280px] sm:w-[360px] md:w-[480px] lg:w-[600px] shrink-0 relative rounded-[32px] overflow-hidden bg-[#1a1a1c] snap-center">
-              <Image
-                src="https://picsum.photos/seed/portrait15/800/450"
-                alt="AI generated portrait"
-                fill
-                className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
-                referrerPolicy="no-referrer"
-              />
+
+            {/* Row 3 - Offset */}
+            <div className="flex gap-4 md:gap-6 w-max ml-6 md:ml-12">
+              {[13, 14, 15, 16, 17, 18].map((i) => (
+                <div key={`r3-${i}`} className="aspect-video w-[240px] sm:w-[300px] md:w-[380px] lg:w-[460px] shrink-0 relative rounded-[20px] md:rounded-[28px] overflow-hidden bg-[#1a1a1c]">
+                  <Image
+                    src={`https://picsum.photos/seed/portrait1${i}/800/450`}
+                    alt="AI generated portrait"
+                    fill
+                    className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
