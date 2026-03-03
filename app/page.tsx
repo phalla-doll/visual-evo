@@ -240,6 +240,19 @@ export default function Page() {
             </div>
           </div>
         </section>
+
+        {/* Bottom CTA Section */}
+        <section className="w-full max-w-[800px] mx-auto px-8 pb-32 pt-16 flex flex-col items-center text-center">
+          <h2 className="text-4xl md:text-5xl tracking-tight text-[#f5f5f5] font-normal mb-10">
+            Ready to bring your ideas to life?
+          </h2>
+          <button 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="bg-[#f5f5f5] text-[#101010] px-10 py-4 rounded-full hover:bg-white transition-all duration-300 text-[16px] font-medium hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.15)]"
+          >
+            Start Generating Now
+          </button>
+        </section>
       </main>
 
       {/* Footer */}
