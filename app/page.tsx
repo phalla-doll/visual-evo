@@ -125,6 +125,36 @@ export default function Page() {
                 </div>
               ))}
             </div>
+
+            {/* Row 4 - Offset (Half image + half gap) */}
+            <div className="flex gap-[3vw] sm:gap-[2vw] md:gap-[1.5vw] w-max ml-[46.5vw] sm:ml-[28vw] md:ml-[21.75vw] lg:ml-[17.75vw] xl:ml-[13.75vw]">
+              {[25, 26, 27, 28, 29, 30, 31, 32].map((i) => (
+                <div key={`r4-${i}`} className="aspect-video w-[90vw] sm:w-[54vw] md:w-[42vw] lg:w-[34vw] xl:w-[26vw] shrink-0 relative rounded-[20px] md:rounded-[28px] overflow-hidden bg-[#1a1a1c]">
+                  <Image
+                    src={`https://picsum.photos/seed/portrait1${i}/800/450`}
+                    alt="AI generated portrait"
+                    fill
+                    className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Row 5 - Aligned with Row 1 for a brick pattern */}
+            <div className="flex gap-[3vw] sm:gap-[2vw] md:gap-[1.5vw] w-max">
+              {[33, 34, 35, 36, 37, 38, 39, 40].map((i) => (
+                <div key={`r5-${i}`} className="aspect-video w-[90vw] sm:w-[54vw] md:w-[42vw] lg:w-[34vw] xl:w-[26vw] shrink-0 relative rounded-[20px] md:rounded-[28px] overflow-hidden bg-[#1a1a1c]">
+                  <Image
+                    src={`https://picsum.photos/seed/portrait1${i}/800/450`}
+                    alt="AI generated portrait"
+                    fill
+                    className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </main>
