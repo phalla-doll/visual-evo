@@ -58,80 +58,57 @@ export default function Page() {
         </div>
 
         {/* Image Grid */}
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-24">
-          <div className="aspect-[4/5] relative rounded-[32px] overflow-hidden bg-[#1a1a1c]">
-            <Image
-              src="https://picsum.photos/seed/portrait11/600/800"
-              alt="AI generated portrait"
-              fill
-              className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
-              referrerPolicy="no-referrer"
-            />
-          </div>
-          <div className="aspect-[4/5] relative rounded-[32px] overflow-hidden bg-[#1a1a1c]">
-            <Image
-              src="https://picsum.photos/seed/portrait12/600/800"
-              alt="AI generated portrait"
-              fill
-              className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
-              referrerPolicy="no-referrer"
-            />
-          </div>
-          <div className="aspect-[4/5] relative rounded-[32px] overflow-hidden bg-[#1a1a1c]">
-            <Image
-              src="https://picsum.photos/seed/portrait13/600/800"
-              alt="AI generated portrait"
-              fill
-              className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
-              referrerPolicy="no-referrer"
-            />
-          </div>
-          <div className="aspect-[4/5] relative rounded-[32px] overflow-hidden bg-[#1a1a1c]">
-            <Image
-              src="https://picsum.photos/seed/portrait14/600/800"
-              alt="AI generated portrait"
-              fill
-              className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
-              referrerPolicy="no-referrer"
-            />
-          </div>
+        <div className="w-full relative pb-24 max-w-[100vw] overflow-hidden">
+          {/* Fade masks for edges */}
+          <div className="absolute left-0 top-0 bottom-0 w-12 md:w-24 bg-gradient-to-r from-[#101010] to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-12 md:w-24 bg-gradient-to-l from-[#101010] to-transparent z-10 pointer-events-none"></div>
           
-          {/* Second row partial visibility to match design */}
-          <div className="aspect-[4/5] relative rounded-t-[32px] overflow-hidden bg-[#1a1a1c]">
-            <Image
-              src="https://picsum.photos/seed/portrait15/600/800"
-              alt="AI generated portrait"
-              fill
-              className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
-              referrerPolicy="no-referrer"
-            />
-          </div>
-          <div className="aspect-[4/5] relative rounded-t-[32px] overflow-hidden bg-[#1a1a1c]">
-            <Image
-              src="https://picsum.photos/seed/portrait16/600/800"
-              alt="AI generated portrait"
-              fill
-              className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
-              referrerPolicy="no-referrer"
-            />
-          </div>
-          <div className="aspect-[4/5] relative rounded-t-[32px] overflow-hidden bg-[#1a1a1c]">
-            <Image
-              src="https://picsum.photos/seed/portrait17/600/800"
-              alt="AI generated portrait"
-              fill
-              className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
-              referrerPolicy="no-referrer"
-            />
-          </div>
-          <div className="aspect-[4/5] relative rounded-t-[32px] overflow-hidden bg-[#1a1a1c]">
-            <Image
-              src="https://picsum.photos/seed/portrait18/600/800"
-              alt="AI generated portrait"
-              fill
-              className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
-              referrerPolicy="no-referrer"
-            />
+          <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar px-12 md:px-24">
+            <div className="aspect-video w-[280px] sm:w-[360px] md:w-[480px] lg:w-[600px] shrink-0 relative rounded-[32px] overflow-hidden bg-[#1a1a1c] snap-center">
+              <Image
+                src="https://picsum.photos/seed/portrait11/800/450"
+                alt="AI generated portrait"
+                fill
+                className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div className="aspect-video w-[280px] sm:w-[360px] md:w-[480px] lg:w-[600px] shrink-0 relative rounded-[32px] overflow-hidden bg-[#1a1a1c] snap-center">
+              <Image
+                src="https://picsum.photos/seed/portrait12/800/450"
+                alt="AI generated portrait"
+                fill
+                className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div className="aspect-video w-[280px] sm:w-[360px] md:w-[480px] lg:w-[600px] shrink-0 relative rounded-[32px] overflow-hidden bg-[#1a1a1c] snap-center">
+              <Image
+                src="https://picsum.photos/seed/portrait13/800/450"
+                alt="AI generated portrait"
+                fill
+                className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div className="aspect-video w-[280px] sm:w-[360px] md:w-[480px] lg:w-[600px] shrink-0 relative rounded-[32px] overflow-hidden bg-[#1a1a1c] snap-center">
+              <Image
+                src="https://picsum.photos/seed/portrait14/800/450"
+                alt="AI generated portrait"
+                fill
+                className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div className="aspect-video w-[280px] sm:w-[360px] md:w-[480px] lg:w-[600px] shrink-0 relative rounded-[32px] overflow-hidden bg-[#1a1a1c] snap-center">
+              <Image
+                src="https://picsum.photos/seed/portrait15/800/450"
+                alt="AI generated portrait"
+                fill
+                className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
+                referrerPolicy="no-referrer"
+              />
+            </div>
           </div>
         </div>
       </main>
