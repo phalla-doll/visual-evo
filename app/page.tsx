@@ -2,10 +2,13 @@
 
 import Image from "next/image";
 import { ChevronDown, Star } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Page() {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [ar, setAr] = useState("16:9");
+  const [version, setVersion] = useState("6.0 [ALPHA]");
+  const [stylize, setStylize] = useState("250");
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -56,18 +59,24 @@ export default function Page() {
 
           {/* Parameters */}
           <div className="flex flex-wrap justify-center gap-3 mb-24 text-[13px] text-[#a0a0a0] font-light">
-            <button className="flex items-center gap-2 bg-[#222224] px-4 py-2 rounded-full hover:bg-[#2a2a2c] transition-colors border border-white/5">
-              <span>--ar 16:9</span>
-              <ChevronDown className="w-3.5 h-3.5 opacity-60" />
-            </button>
-            <button className="flex items-center gap-2 bg-[#222224] px-4 py-2 rounded-full hover:bg-[#2a2a2c] transition-colors border border-white/5">
-              <span>--v 6.0 [ALPHA]</span>
-              <ChevronDown className="w-3.5 h-3.5 opacity-60" />
-            </button>
-            <button className="flex items-center gap-2 bg-[#222224] px-4 py-2 rounded-full hover:bg-[#2a2a2c] transition-colors border border-white/5">
-              <span>--stylize 250</span>
-              <ChevronDown className="w-3.5 h-3.5 opacity-60" />
-            </button>
+            <ParameterDropdown
+              prefix="--ar"
+              options={["16:9", "4:3", "1:1", "3:4", "9:16"]}
+              value={ar}
+              onChange={setAr}
+            />
+            <ParameterDropdown
+              prefix="--v"
+              options={["6.0 [ALPHA]", "5.2", "5.1", "Niji 6"]}
+              value={version}
+              onChange={setVersion}
+            />
+            <ParameterDropdown
+              prefix="--stylize"
+              options={["50", "100", "250", "500", "750", "1000"]}
+              value={stylize}
+              onChange={setStylize}
+            />
           </div>
         </div>
 
@@ -265,6 +274,70 @@ export default function Page() {
           </div>
         </div>
       </footer>
+    </div>
+  );
+}
+
+function ParameterDropdown({
+  prefix,
+  options,
+  value,
+  onChange,
+}: {
+  prefix: string;
+  options: string[];
+  value: string;
+  onChange: (val: string) => void;
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  return (
+    <div className="relative" ref={dropdownRef}>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className={`flex items-center gap-2 bg-[#222224] px-4 py-2 rounded-full hover:bg-[#2a2a2c] transition-colors border ${
+          isOpen ? "border-white/20 bg-[#2a2a2c]" : "border-white/5"
+        }`}
+      >
+        <span>
+          {prefix} {value}
+        </span>
+        <ChevronDown
+          className={`w-3.5 h-3.5 opacity-60 transition-transform duration-300 ${
+            isOpen ? "rotate-180" : ""
+          }`}
+        />
+      </button>
+
+      {isOpen && (
+        <div className="absolute top-full mt-2 left-0 w-40 bg-[#1a1a1c] border border-white/10 rounded-2xl shadow-xl overflow-hidden z-50 py-2">
+          {options.map((opt) => (
+            <button
+              key={opt}
+              onClick={() => {
+                onChange(opt);
+                setIsOpen(false);
+              }}
+              className={`w-full text-left px-4 py-2.5 text-[13px] hover:bg-white/5 transition-colors ${
+                value === opt ? "text-white bg-white/5" : "text-[#a0a0a0]"
+              }`}
+            >
+              {opt}
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
